@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Style the first word of each suggestion */
+        .styled-first-word {
+            color: red;
+            /* Add other styling properties as needed */
+        }
+
+        .styled-first-part {
+            font-weight: bold;
+             color: #1c5eb9;
+            /* Add other styling properties as needed */
+        }
+    </style>
+    <title>Symptom Checker - Results</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="h22">Rezultate pentru simptomele: {{ symptoms }}</div>
+        <ul>
+            {% for suggestion in suggestions %}
+                <br>{{ suggestion | safe }}</br>
+            {% endfor %}
+        </ul>
+        <p></p>
+        <!-- Informative message for users -->
+        <p class="disclaimer">Observații: Aceste informații sunt furnizate în scopuri orientative. <br></br>Consultați un medic pentru o evaluare detaliată!</p>
+    </div>
+    <div class="h22">Alte resurse utile pentru pacienți:</div>
+    <div class="useful-links-wrapper">
+        <!-- First set of useful links -->
+        <div class="useful-links-container">
+            <div class="useful-links">
+                <div class="title-container">
+                    <h2>Realizează o programare chiar acum</h2>
+                    <p2>Regina Maria:</p2>
+                </div>
+                <a href="https://www.reginamaria.ro/programare"> <p2>Programare Regina Maria</p2></a>
+            </div>
+        </div>
+
+        <!-- Second set of useful links -->
+        <div class="useful-links-container">
+            <div class="useful-links">
+                <div class="title-container">
+                    <h2>Fii la curent cu medicina secolului 21</h2>
+                    <p2>The Medical Futurist:</p2>
+                </div>
+                <a href="https://medicalfuturist.com/"> <p2> Homepage The Medical Futurist</p2></a>
+            </div>
+        </div>
+
+        <!-- Third set of useful links -->
+        <div class="useful-links-container">
+            <div class="useful-links">
+                <div class="title-container">
+                    <h2>Căutare avansată pentru simptome:</h2>
+                    <p2>ADA</p2>
+                </div>
+                <a href="https://ada.com/"> <p2> ADA Symptom Checker</p2></a>
+            </div>
+        </div>
+    </div>
+    <div class="empty-space"></div>
+     <div class="footer">2023 Symptom Checker. All rights reserved.</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='autocomplete.css') }}">
+    <title>Symptom Checker</title>
+</head>
+<body>
+    <div class="container2">
+        <h1>Symptom Checker</h1>
+        <form method="POST" action="/analyze">
+            <label for="symptoms">Introduceți simptomele:</label>
+
+            <div class="search-box">
+                <input type="text" name="symptoms" id="symptoms" placeholder="Introdu un simptom..." required autocomplete="off">
+                <div class="result-box"></div>
+                <button type="submit">Analizează</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">2023 Symptom Checker. All rights reserved.</div>
+
+    <script src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+</body>
+</html>
